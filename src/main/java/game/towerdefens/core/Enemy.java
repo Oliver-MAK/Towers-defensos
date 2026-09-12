@@ -8,17 +8,19 @@ public class Enemy {
     private final int maxHealth;
     private int currHealth;
     private final int dmgToPlayer;
-    private int reward;
-    private int speed;
+    private final int reward;
+    private final int speed;
     final List<Tile> path;
     private int pathIndex;
 
-    public Enemy (int maxHealth, int currHealth, int dmgToPlayer, int reward, int speed, List<Tile> path,  TileType type, int pathIndex) {
+    public Enemy (int maxHealth, int dmgToPlayer, int reward, int speed, List<Tile> path) {
         this.maxHealth = maxHealth;
+        this.currHealth = maxHealth;
         this.dmgToPlayer = dmgToPlayer;
         this.reward = reward;
         this.speed = speed;
         this.path = path;
+        this.pathIndex = 0;
     }
 
     public boolean isAlive(){
