@@ -14,15 +14,15 @@ public class GameField {
 
         for(int i = 0; i < height; i++){
             for(int j = 0; j < width; j++){
-                grid[i][j] = EMPTY;
+                grid[i][j] = new Tile(EMPTY);
             }
         }
 
     }
 
     public Tile getTile(int x, int y){
-        if (0 <= x < width,  0 <= y < height){
-            return IllegalArgumentException("wrong place");
+        if (x < 0 || y < 0 || x >= width || y >= height){
+            throw new IllegalArgumentException("wrong place");
         }
         return grid[y][x];
     }
