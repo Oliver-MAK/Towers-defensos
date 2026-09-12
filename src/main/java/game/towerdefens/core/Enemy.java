@@ -5,13 +5,12 @@ import java.util.List;
 
 
 public class Enemy {
-    private int maxHealth;
+    private final int maxHealth;
     private int currHealth;
-    private int dmgToPlayer;
+    private final int dmgToPlayer;
     private int reward;
     private int speed;
-    private List<Tile> path;
-    private TileType type;
+    final List<Tile> path;
     private int pathIndex;
 
     public Enemy (int maxHealth, int currHealth, int dmgToPlayer, int reward, int speed, List<Tile> path,  TileType type, int pathIndex) {
@@ -20,7 +19,6 @@ public class Enemy {
         this.reward = reward;
         this.speed = speed;
         this.path = path;
-        this.type = type;
     }
 
     public boolean isAlive(){
