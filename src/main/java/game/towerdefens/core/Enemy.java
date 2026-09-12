@@ -2,39 +2,31 @@ package game.towerdefens.core;
 
 import java.util.List;
 
-import static game.towerdefens.core.TileType.END;
 
 public class Enemy {
-    int maxHealth;
-    int currHealth;
-    int maxDamage;
-    int currDamage;
-    int reward;
-    int speed;
-    List<Tile> path;
-    TileType type;
-    int pathIndex;
+    private int maxHealth;
+    private int currHealth;
+    private int dmgToPlayer;
+    private int reward;
+    private int speed;
+    private List<Tile> path;
+    private TileType type;
+    private int pathIndex;
 
     public boolean isAlive(){
-        if (currHealth < 0){
-            return false;
-        }
-        return true;
+        return currHealth >= 0;
     }
 
     public boolean isAtEnd(TileType tile){
-        if (tile == END){
-            return true;
-        }
-        return false;
-
-        //return tile == END;
+        return pathIndex == path.size()-1;
     }
-    public int getCurrentHealth(){
+    public int getCurrHealth(){
         return currHealth;
     }
     public int getMaxHealth(){
         return maxHealth;
     }
-
+    public int getDmgToPlayer (){
+        return dmgToPlayer;
+    }
 }
