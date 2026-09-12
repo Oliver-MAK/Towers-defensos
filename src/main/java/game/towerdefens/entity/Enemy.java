@@ -1,6 +1,7 @@
-package game.towerdefens.core;
+package game.towerdefens.entity;
 
-import java.util.ArrayList;
+import game.towerdefens.core.Tile;
+
 import java.util.List;
 
 
