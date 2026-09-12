@@ -14,13 +14,15 @@ public class Enemy {
     private TileType type;
     private int pathIndex;
 
-    public Enemy (int maxHealth, int currHealth, int dmgToPlayer, int reward, int speed, List<Tile> path,) {
+    public Enemy (int maxHealth, int currHealth, int dmgToPlayer, int reward, int speed, List<Tile> path,  TileType type, int pathIndex) {
         this.maxHealth = maxHealth;
-        this.currHealth = currHealth;
+        this.currHealth = maxHealth;
         this.dmgToPlayer = dmgToPlayer;
         this.reward = reward;
         this.speed = speed;
         this.path = path;
+        this.type = type;
+        this.pathIndex = pathIndex;
     }
 
     public boolean isAlive(){
