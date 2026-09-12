@@ -1,5 +1,6 @@
 package game.towerdefens.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,6 +13,15 @@ public class Enemy {
     private List<Tile> path;
     private TileType type;
     private int pathIndex;
+
+    public Enemy (int maxHealth, int currHealth, int dmgToPlayer, int reward, int speed, List<Tile> path,) {
+        this.maxHealth = maxHealth;
+        this.currHealth = currHealth;
+        this.dmgToPlayer = dmgToPlayer;
+        this.reward = reward;
+        this.speed = speed;
+        this.path = path;
+    }
 
     public boolean isAlive(){
         return currHealth > 0;
