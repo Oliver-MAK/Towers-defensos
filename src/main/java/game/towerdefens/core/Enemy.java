@@ -14,10 +14,10 @@ public class Enemy {
     private int pathIndex;
 
     public boolean isAlive(){
-        return currHealth >= 0;
+        return currHealth > 0;
     }
 
-    public boolean isAtEnd(TileType tile){
+    public boolean isAtEnd(){
         return pathIndex == path.size()-1;
     }
     public int getCurrHealth(){
@@ -29,4 +29,15 @@ public class Enemy {
     public int getDmgToPlayer (){
         return dmgToPlayer;
     }
+
+    public void takeDamage(int dmgToPlayer){
+        this.dmgToPlayer = dmgToPlayer;
+    }
+
+    public void move(){
+        if(isAlive() && !isAtEnd()){
+            pathIndex++;
+        }
+    }
+
 }
