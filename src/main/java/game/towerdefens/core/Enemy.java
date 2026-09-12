@@ -18,7 +18,7 @@ public class Enemy {
     }
 
     public boolean isAtEnd(){
-        return pathIndex == path.size()-1;
+        return pathIndex >= path.size()-1;
     }
     public int getCurrHealth(){
         return currHealth;
@@ -30,8 +30,11 @@ public class Enemy {
         return dmgToPlayer;
     }
 
-    public void takeDamage(int dmgToPlayer){
-        this.dmgToPlayer = dmgToPlayer;
+    public void takeDamage(int amount){
+        currHealth -= amount;
+        if(currHealth <= 0){
+            currHealth = 0;
+        }
     }
 
     public void move(){
