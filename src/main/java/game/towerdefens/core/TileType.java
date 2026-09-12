@@ -1,7 +1,8 @@
 package game.towerdefens.core;
 
-public enum TileType extends Tile {
+public enum TileType{
     PATH,
+    END,
     BUILDABLE,
     EMPTY
 }
