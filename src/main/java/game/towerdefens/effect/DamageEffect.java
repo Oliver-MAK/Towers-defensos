@@ -1,7 +1,6 @@
 package game.towerdefens.effect;
 
 import game.towerdefens.entity.Enemy;
-import game.towerdefens.strategy.TargetingStrategy;
 
 
 public class DamageEffect implements TowerEffect {
@@ -10,7 +9,6 @@ public class DamageEffect implements TowerEffect {
     public DamageEffect(int amount) {
         this.amount = amount;
     }
-
 
     @Override
     public void apply(Enemy target) {
