@@ -13,6 +13,7 @@ public class Enemy {
     private final int speed;
     final List<Tile> path;
     private int pathIndex;
+    private int slowTicksRemaining;
 
     public Enemy (int maxHealth, int dmgToPlayer, int reward, int speed, List<Tile> path) {
         this.maxHealth = maxHealth;
@@ -52,6 +53,13 @@ public class Enemy {
         if(isAlive() && !isAtEnd()){
             pathIndex++;
         }
+    }
+
+    public int getCurrentSpeed(){
+        if (slowTicksRemaining > 0){
+            return speed/2;
+        }
+        return speed;
     }
 
 }
