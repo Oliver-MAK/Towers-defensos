@@ -13,9 +13,8 @@ public class MultiTargetStrategy implements TargetingStrategy {
 
     @Override
     public List<Enemy> selectTargets(List<Enemy> enemiesInRange) {
-        if (enemiesInRange.isEmpty()){
-            return List.of();
-        }
-        return enemiesInRange.subList(0, 3);
+        int limit = Math.min(enemiesInRange.size(), maxTargets);
+        return enemiesInRange.subList(0, limit);
     }
+
 }
