@@ -62,4 +62,8 @@ public class Enemy {
         return speed;
     }
 
+    public void applySlow(int durationTicks){
+        slowTicksRemaining = durationTicks;
+    }
+
 }
