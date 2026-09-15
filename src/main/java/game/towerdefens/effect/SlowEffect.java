@@ -11,6 +11,6 @@ public class SlowEffect implements TowerEffect {
 
     @Override
     public void apply(Enemy target) {
-
+        target.applySlow(durationTicks);
     }
 }
